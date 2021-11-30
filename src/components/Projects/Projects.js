@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Container, Nav, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import air from "../../images/air-drone.PNG";
 import tour from "../../images/tour-world.PNG";
@@ -8,7 +8,7 @@ import learn from "../../images/learn-code.PNG";
 
 const Projects = () => {
     return (
-        <div>
+        <div id="projects">
             <h2 className="my-5">projects</h2>
             <Container>
                 <Row xs={1} md={2} className="g-4">

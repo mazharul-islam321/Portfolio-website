@@ -25,7 +25,10 @@ const Header = () => {
                             <Nav.Link href="#about">About</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="https://drive.google.com/file/d/1x2bCfCpcvaEhTr9OqTzki6dAsPSaaP8r/view?usp=sharing">
+                            <Nav.Link
+                                target="_black"
+                                href="https://drive.google.com/file/d/1x2bCfCpcvaEhTr9OqTzki6dAsPSaaP8r/view?usp=sharing"
+                            >
                                 Download Resume
                             </Nav.Link>
                         </Nav>
