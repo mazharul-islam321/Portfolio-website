@@ -44,7 +44,7 @@ const Contact = () => {
                             className=" mx-4 form-width"
                         >
                             <Form.Control
-                                name="user_email"
+                                name="email"
                                 type="email"
                                 placeholder="name@example.com"
                             />
