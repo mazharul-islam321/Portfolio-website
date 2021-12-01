@@ -6,7 +6,7 @@ import Projects from "../Projects/Projects";
 
 const Home = () => {
     return (
-        <div>
+        <div id="home">
             <HomePage></HomePage>
             <Projects></Projects>
             <Contact></Contact>

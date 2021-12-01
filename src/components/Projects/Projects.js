@@ -1,94 +1,38 @@
-import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import air from "../../images/air-drone.PNG";
-import tour from "../../images/tour-world.PNG";
-import madicha from "../../images/madichaPNG.PNG";
-import learn from "../../images/learn-code.PNG";
+import useAuth from "../../hooks/useAuth";
 
 const Projects = () => {
+    const [projects] = useAuth();
+
+    // console.log(projects);
     return (
         <div id="projects">
             <h2 className="my-5">projects</h2>
             <Container>
                 <Row xs={1} md={2} className="g-4">
-                    <Col>
-                        <Card>
-                            <Card.Img variant="top" src={air} />
-                            <Card.Body>
-                                <Card.Title>Air-Drone</Card.Title>
-                                <Card.Text>
-                                    "Drones overall will be more impactful than
-                                    I think people recognize, in positive ways
-                                    to help society."
-                                </Card.Text>
-                                <a
-                                    target="_black"
-                                    href="https://air-drone.web.app/"
-                                >
-                                    <Button>Live Preview</Button>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card>
-                            <Card.Img variant="top" src={tour} />
-                            <Card.Body>
-                                <Card.Title>Tour-World</Card.Title>
-                                <Card.Text>
-                                    “Travel is fatal to prejudice, bigotry, and
-                                    narrow-mindedness, and many of our people
-                                    need it sorely on these accounts. Broad...
-                                </Card.Text>
-                                <a
-                                    target="_black"
-                                    href="https://tour-world-7fcb7.web.app/"
-                                >
-                                    <Button>Live Preview</Button>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card>
-                            <Card.Img variant="top" src={madicha} />
-                            <Card.Body>
-                                <Card.Title>Medicha</Card.Title>
-                                <Card.Text>
-                                    Medical research involves research in a wide
-                                    range of fields, such as biology, chemistry,
-                                    pharmacology and toxicology ...
-                                </Card.Text>
-                                <a
-                                    target="_black"
-                                    href="https://medicha-d19f5.web.app/"
-                                >
-                                    <Button>Live Preview</Button>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card>
-                            <Card.Img variant="top" src={learn} />
-                            <Card.Body>
-                                <Card.Title>Learn-Code</Card.Title>
-                                <Card.Text>
-                                    Whether you're a beginner just starting out
-                                    or an experienced developer looking for
-                                    courses to enhance your skills and reach
-                                    higher levels ...
-                                </Card.Text>
-                                <a
-                                    target="_black"
-                                    href="https://determined-einstein-21b832.netlify.app/"
-                                >
-                                    <Button>Live Preview</Button>
-                                </a>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                    {projects.map((project) => (
+                        <Col key={project.id}>
+                            <Card>
+                                <Card.Img variant="top" src={project.img} />
+                                <Card.Body>
+                                    <Card.Title>{project.name}</Card.Title>
+                                    <Card.Text>{project.desc}</Card.Text>
+                                    <a
+                                        target="_black"
+                                        href={project.url}
+                                        className="me-2"
+                                    >
+                                        <Button>Live Preview</Button>
+                                    </a>
+                                    <Link to={`/details/${project.id}`}>
+                                        <Button>Details</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
             </Container>
         </div>
