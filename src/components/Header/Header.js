@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
                 sticky="top"
             >
                 <Container>
-                    <Navbar.Brand as={HashLink} to="/home#home">
+                    <Navbar.Brand as={HashLink} to="/">
                         Mazharul Islam Mamun
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,6 +26,9 @@ const Header = () => {
                             </Nav.Link>
                             <Nav.Link as={HashLink} to="/home#projects">
                                 MY Projects
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/blogs">
+                                Blogs
                             </Nav.Link>
                             <Nav.Link as={HashLink} to="/home#contact">
                                 Contact Me

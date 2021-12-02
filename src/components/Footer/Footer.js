@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
     return (
         <div className="footer">
-            <h2>Footer</h2>
+            <h4>All &copy; Copyright reserved by Mazharul Islam Mamun</h4>
         </div>
     );
 };
