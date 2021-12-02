@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Button from "react-bootstrap/Button";
 
 const Details = () => {
     const { id } = useParams();
@@ -33,6 +34,17 @@ const Details = () => {
                         <p>-{value?.point5}</p>
                     </Col>
                 </Row>
+                <a href={value.url} target="_blank">
+                    <Button variant="success">Live</Button>
+                </a>
+                <a href={value.client} target="_blank" className="mx-3">
+                    <Button variant="success">Client</Button>
+                </a>
+                {value.server && (
+                    <a href={value.server} target="_blank">
+                        <Button variant="success">Server</Button>
+                    </a>
+                )}
             </Container>
         </div>
     );

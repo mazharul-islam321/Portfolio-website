@@ -19,6 +19,9 @@ const Projects = () => {
                                 <Card.Body>
                                     <Card.Title>{project.name}</Card.Title>
                                     <Card.Text>{project.desc}</Card.Text>
+                                    <p>-{project.point1}</p>
+                                    <p>-{project.point2}</p>
+                                    <p>-{project.point3}</p>
                                     <a
                                         target="_black"
                                         href={project.url}
